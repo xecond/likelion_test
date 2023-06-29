@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>Write about Your Club</h1>
+
+    <form action="{% url 'create' %}" method="post">
+        {% csrf_token %}
+        <p>동아리 이름: <input type="text" name="clubname"></p>
+        <!-- <p>작성자: <input type="text" name="writer"></p> -->
+        인원: <input type="number" name="personnel">
+        동아리 소개: <textarea name="clubinfo" id="" cols="30" rows="10"></textarea>
+        <button type="submit">submit</button>
+    </form>
+
+{% endblock %}

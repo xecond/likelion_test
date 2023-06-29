@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        {% for club in clubs %}
+            <div>
+            <a href="{% url 'detail' club.id %}"><h3>{{club.clubname}}</h3></a>
+            {{club.clubinfo}}
+            </div>
+        {% endfor %}
+        <div>
+            <a href="{% url 'new' %}">새 글 작성</a>
+        </div>
+    </div>
+
+{% endblock %}
